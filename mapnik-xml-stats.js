@@ -12,7 +12,6 @@ fs.readFile(argv._[0], function(err, data) {
             styles[i].style = style.$.name;
             styles[i].rules = style.Rule ? style.Rule.length : 0;
             styles[i].fields = [];
-            var colpat = new RegExp('\[[A-Za-z0-9]\]','g');
             for (rule in style.Rule) {
                 var filter = style.Rule[rule].Filter ? style.Rule[rule].Filter[0] : '';
                 filter = filter.match(/\[[A-Za-z0-9]+\]/g);
