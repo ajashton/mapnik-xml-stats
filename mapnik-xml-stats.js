@@ -16,7 +16,7 @@ fs.readFile(argv._[0], function(err, data) {
             styles[i].fields = [];
             for (rule in style.Rule) {
                 var filter = style.Rule[rule].Filter ? style.Rule[rule].Filter[0] : '';
-                filter = filter.match(/\[[A-Za-z0-9]+\]/g);
+                filter = filter.match(/\[[-A-Za-z0-9_]+\]/g);
                 if (!filter) continue;
                 for (j = 0; j < filter.length; j++) {
                     if (styles[i].fields.indexOf(filter[j]) === -1) {
